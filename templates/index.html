@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    </head>
     <body>
         <h1>Chicago 311 Reports</h1>
         <table border=1 cellpadding=7>
@@ -8,12 +11,14 @@
                 <th>Inspection Type</th>
                 <th>Date</th>
                 <th>Address</th>
+                <th>Address</th>
             </tr>
             {% for obj in object_list %}
             <tr>
                 <td><a href="{{ obj.inspection_number }}/">{{ obj.inspection_type }}</a></td>
                 <td>{{ obj.modified_date }}</td>
-                <td>{{ obj.street_number_to }} {{ obj.direction }} {{ obj.street_name }} {{ obj.street_type }} </td>
+                <td>{{ obj.address_address }}</td>
+                <td>{{ obj.address }}
             </tr>
             {% endfor %}
         </table>
