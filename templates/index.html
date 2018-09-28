@@ -8,14 +8,12 @@
                 <th>Inspection Type</th>
                 <th>Date</th>
                 <th>Address</th>
-                <th>Narrative</th>
             </tr>
             {% for obj in object_list %}
             <tr>
-                <td>{{ obj.inspection_type }}</td>
+                <td><a href="{{ obj.inspection_number }}/">{{ obj.inspection_type }}</a></td>
                 <td>{{ obj.modified_date }}</td>
-                <td>{{ obj.street_name }}</td>
-                <td>{{ obj.narrative }}</td>
+                <td>{{ obj.street_number_to }} {{ obj.direction }} {{ obj.street_name }} {{ obj.street_type }} </td>
             </tr>
             {% endfor %}
         </table>
