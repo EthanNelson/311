@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head></head>
+    <body>
+        <h1>Chicago 311 Reports</h1>
+        <table border=1 cellpadding=7>
+            <tr>
+                <th>Inspection Type</th>
+                <th>Date</th>
+                <th>Address</th>
+                <th>Narrative</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.inspection_type }}</td>
+                <td>{{ obj.modified_date }}</td>
+                <td>{{ obj.street_name }}</td>
+                <td>{{ obj.narrative }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
